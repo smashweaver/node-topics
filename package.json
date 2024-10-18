@@ -13,5 +13,8 @@
   "description": "",
   "volta": {
     "node": "16.20.2"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
   }
 }
