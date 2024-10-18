@@ -1,4 +1,4 @@
-// import { jest } from "@jest/globals";
+//import { jest } from "@jest/globals";
 import { schema, isSimpleMathExpression } from "../validations";
 
 describe("Math Expression Schema", () => {
@@ -9,12 +9,14 @@ describe("Math Expression Schema", () => {
   });
 
   test("rejects invalid expressions", () => {
+    //jest.spyOn(console, "error").mockImplementation(() => {});
     expect(isSimpleMathExpression("1+")).toBe(false);
     expect(isSimpleMathExpression("a+b")).toBe(false);
     expect(isSimpleMathExpression("1++1")).toBe(false);
   });
 
   test("schema throws error for invalid expressions", () => {
+    //jest.spyOn(console, "error").mockImplementation(() => {});
     expect(() => schema.parse("1+")).toThrow();
     expect(() => schema.parse("a+b")).toThrow();
   });

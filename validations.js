@@ -15,9 +15,9 @@ export function isSimpleMathExpression(expression) {
     schema.parse(expression);
     return true;
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      console.error(error.errors[0].message);
-    }
+    //if (error instanceof z.ZodError) {
+    //  console.error(error.errors[0].message);
+    //}
     return false;
   }
 }
