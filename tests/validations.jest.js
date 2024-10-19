@@ -1,5 +1,5 @@
 //import { jest } from "@jest/globals";
-import { schema, isSimpleMathExpression } from "../validations";
+import { schema, isSimpleMathExpression } from "../utils/validations.js";
 
 describe("Math Expression Schema", () => {
   test("validates correct simple expressions", () => {

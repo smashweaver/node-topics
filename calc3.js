@@ -1,7 +1,7 @@
-import { stdin as input, stdout as output, exit } from "node:process";
+import { stdin as input, stdout as output } from "node:process";
 import * as readline from "node:readline";
 import { promisify } from "node:util";
-import { isSimpleMathExpression } from "./validations";
+import { isSimpleMathExpression } from "./utils/validations.js";
 
 async function calc() {
   const rl = readline.createInterface({ input, output });

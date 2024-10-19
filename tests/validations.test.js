@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert";
-import { schema, isSimpleMathExpression } from "../validations.js";
+import { schema, isSimpleMathExpression } from "../utils/validations.js";
 
 test("Math Expression Schema", async (t) => {
   await t.test("validates correct simple expressions", (t) => {
