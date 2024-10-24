@@ -6,19 +6,20 @@
   "scripts": {
     "test": "node --test tests",
     "test:jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node index.js"
+    "start": "node calc4.js"
   },
   "keywords": [],
   "author": "Jason Jimenez",
   "license": "ISC",
   "description": "",
   "volta": {
-    "node": "16.20.2"
+    "node": "20.18.0"
   },
   "dependencies": {
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "module-alias": "^2.2.3"
   }
 }
