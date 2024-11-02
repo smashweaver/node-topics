@@ -4,7 +4,7 @@ import { promisify } from "node:util";
 
 export function usePrompt(promptText = "Enter something") {
   const rl = readline.createInterface({ input, output });
-  const onLine = (callback) => rl.on("line", callback);
+  const onNewLine = (callback) => rl.on("line", callback);
   const close = () => {
     rl.close();
     setTimeout(() => process.exit(0), 200);
@@ -14,5 +14,5 @@ export function usePrompt(promptText = "Enter something") {
     rl.prompt();
   };
 
-  return { prompt, close, onLine };
+  return { prompt, close, onNewLine };
 }

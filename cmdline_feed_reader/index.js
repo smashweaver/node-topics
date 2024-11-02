@@ -7,7 +7,7 @@ import { USAGE } from "./constants.js";
 import { usePrompt } from "./prompt.js";
 
 function repl() {
-  const { close, prompt, onLine } = usePrompt("Enter a command");
+  const { close, prompt, onNewLine } = usePrompt("Enter a command");
   const emitter = new EventEmitter();
 
   emitter.on("q", () => {
@@ -45,7 +45,7 @@ function repl() {
     prompt();
   });
 
-  onLine((input) => {
+  onNewLine((input) => {
     const [cmd, ...args] = input.trim().split(/\s+/);
     if (["q", "?", "l", "o", "a", "d"].includes(cmd)) {
       emitter.emit(cmd, args);
