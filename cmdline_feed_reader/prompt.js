@@ -4,9 +4,15 @@ import { promisify } from "node:util";
 
 export function usePrompt(promptText = "Enter something") {
   const rl = readline.createInterface({ input, output });
-  const question = promisify(rl.question).bind(rl);
-  const prompt = question.bind(null, `${promptText}: `);
-  const close = () => rl.close();
+  const onLine = (callback) => rl.on("line", callback);
+  const close = () => {
+    rl.close();
+    setTimeout(() => process.exit(0), 200);
+  };
+  const prompt = () => {
+    rl.setPrompt(`${promptText}: `);
+    rl.prompt();
+  };
 
-  return [prompt, close];
+  return { prompt, close, onLine };
 }
