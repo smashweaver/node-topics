@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node --test tests",
     "test:jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node calc4.js"
+    "start": "node ./cmdline_feed_reader/index.js"
   },
   "keywords": [],
   "author": "Jason Jimenez",
@@ -16,6 +16,8 @@
     "node": "20.18.0"
   },
   "dependencies": {
+    "axios": "^1.7.7",
+    "rss-parser": "^3.13.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
