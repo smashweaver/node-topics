@@ -1,5 +1,5 @@
-import { FeedRepositoryContract } from "../contracts/feedRepositoryContract.js";
-import { Feed } from "../entities/feed.js";
+import { Feed } from "../../entities/feed.js";
+import { FeedRepositoryContract } from "../interfaces/feedRepositoryContract.js";
 
 export class AddFeedUseCase {
   /**

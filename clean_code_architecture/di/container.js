@@ -1,26 +1,28 @@
 export class Container {
   constructor() {
-    /** @type {Map<string, Function>} */
+    /** @type {Map<Symbol, Function>} */
     this.services = new Map();
 
-    /** @type {Map<string, any>} */
+    /** @type {Map<Symbol, any>} */
     this.instances = new Map();
   }
 
   /**
-   * @param {string} name
+   * @param {Symbol} name
    * @param {Function} factory
    * @param {boolean} [singleton=true] - Whether to cache the instance
    */
   register(name, factory, singleton = true) {
+    // console.log("register: ", name);
     this.services.set(name, { factory, singleton });
   }
 
   /**
-   * @param {string} name
+   * @param {Symbol} name
    * @returns {any}
    */
   resolve(name) {
+    // console.log("resolve:", name);
     const service = this.services.get(name);
     if (!service) {
       throw new Error(`Service ${name} not registered`);
@@ -38,12 +40,5 @@ export class Container {
     }
 
     return factory(this);
-  }
-
-  /**
-   * Clear all cached instances
-   */
-  clear() {
-    this.instances.clear();
   }
 }

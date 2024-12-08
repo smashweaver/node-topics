@@ -5,5 +5,5 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const config = {
-  file: join(__dirname, "feeds.json"),
+  filePath: join(__dirname, "feeds.json"),
 };

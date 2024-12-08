@@ -1,5 +1,5 @@
-import { FeedRepositoryContract } from "../contracts/feedRepositoryContract.js";
-import { StorageContract } from "../contracts/storageContract.js";
+import { FeedRepositoryContract } from "../application/interfaces/feedRepositoryContract.js";
+import { StorageContract } from "../application/interfaces/storageContract.js";
 import { Feed } from "../entities/feed.js";
 
 export class FeedRepository extends FeedRepositoryContract {

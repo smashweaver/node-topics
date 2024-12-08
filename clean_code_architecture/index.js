@@ -1,15 +1,20 @@
-import { Application } from "./frameworks/application.js";
-import { Container } from "./frameworks/container.js";
-import { Registry } from "./frameworks/registry.js";
+import { AppContract } from "./app/application.js";
+import { Container } from "./di/container.js";
+import { Registry } from "./di/registry.js";
+import { SYMBOLS } from "./constants.js";
 
-try {
+function main() {
   const container = new Container();
   const registry = new Registry(container);
-  registry.registerServices();
+  registry.init();
 
-  const app = new Application(container);
-  app.start();
-} catch (error) {
-  console.error("Failed to start application:", error);
-  process.exit(1);
+  /** @type {AppContract} */
+  const app = container.resolve(SYMBOLS.App);
+
+  return app.start();
 }
+
+main().catch((error) => {
+  console.error("Application failed to start:", error);
+  process.exit(1);
+});

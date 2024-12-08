@@ -1,4 +1,4 @@
-import { Feed } from "../entities/feed.js";
+import { Feed } from "../../entities/feed.js";
 
 export class FeedRepositoryContract {
   /**

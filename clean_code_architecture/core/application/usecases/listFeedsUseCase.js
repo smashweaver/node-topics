@@ -1,4 +1,4 @@
-import { FeedRepositoryContract } from "../contracts/feedRepositoryContract.js";
+import { FeedRepositoryContract } from "../interfaces/feedRepositoryContract.js";
 
 export class ListFeedsUseCase {
   /**

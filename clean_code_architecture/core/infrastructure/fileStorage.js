@@ -1,5 +1,5 @@
 import { access, constants, readFile, writeFile } from "fs/promises";
-import { StorageContract } from "../contracts/storageContract.js";
+import { StorageContract } from "../application/interfaces/storageContract.js";
 
 export class FileStorage extends StorageContract {
   /**

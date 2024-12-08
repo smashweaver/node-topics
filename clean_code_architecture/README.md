@@ -1,44 +1,41 @@
 # Clean Architecture Feed Reader
 
-A command-line RSS/Atom feed reader application built using Clean Architecture principles.
-
-## Architecture Overview
-
-This application follows Clean Architecture patterns with the following layers:
-
-- **Entities**: Core business objects
-- **Use Cases**: Application-specific business rules
-- **Adapters**: Interface adapters
-- **Frameworks**: External frameworks and tools
+A command-line RSS/Atom feed reader application built using Clean Code Architecture principles.
 
 ### Directory Structure
 
 ```
 clean_code_architecture/
-├── adapters/
-│   ├── consolePrompt.js       # CLI interface
-│   ├── feedController.js      # Feed operations controller
-│   ├── feedRepository.js      # Feed data access
-│   └── fileStorage.js         # File system storage
-├── contracts/
-│   ├── feedControllerContract.js
-│   ├── feedRepositoryContract.js
-│   ├── promptContract.js
-│   └── storageContract.js
-├── entities/
-│   └── feed.js               # Feed business object
-├── frameworks/
-│   ├── application.js        # Main application setup
-│   ├── container.js          # Dependency injection container
-│   └── registry.js           # Service registry
-├── usecases/
-│   ├── addFeedUseCase.js
-│   ├── deleteFeedUseCase.js
-│   ├── listFeedsUseCase.js
-│   └── openFeedUseCase.js
-├── config.js                 # Application configuration
-├── constants.js              # Constant definitions
-└── index.js                 # Application entry point
+├── app
+│   ├── application.js
+│   ├── commandRegistry.js
+│   └── consoleUI.js
+├── config.js
+├── constants.js
+├── core
+│   ├── application
+│   │   ├── interfaces
+│   │   │   ├── feedRepositoryContract.js
+│   │   │   └── storageContract.js
+│   │   └── usecases
+│   │       ├── addFeedUseCase.js
+│   │       ├── deleteFeedUseCase.js
+│   │       ├── listFeedsUseCase.js
+│   │       └── openFeedUseCase.js
+│   ├── entities
+│   │   └── feed.js
+│   ├── infrastructure
+│   │   ├── feedRepository.js
+│   │   └── fileStorage.js
+│   └── interface-adapters
+│       ├── feedControllerContract.js
+│       └── feedController.js
+├── di
+│   ├── container.js
+│   └── registry.js
+├── index.js
+├── README.md
+└── types.js
 ```
 
 ## Features
